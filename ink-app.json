@@ -1,0 +1,50 @@
+{
+  "slug": "tables",
+  "title": "Ink Tables",
+  "repository": "https://github.com/siliconjungle/ink-app-tables",
+  "directory": "dist",
+  "entry": "index.html",
+  "desktop": {
+    "entry": "tables",
+    "context": "self",
+    "icon": "public/icon.svg",
+    "window": {
+      "width": 1200,
+      "height": 800
+    },
+    "dropTypes": [
+      "text/csv",
+      "text/tab-separated-values",
+      ".csv",
+      ".tsv",
+      "application/json"
+    ]
+  },
+  "capabilities": [
+    "world.read",
+    "world.write",
+    "desktop.open"
+  ],
+  "backend": {
+    "entry": "server.mjs",
+    "idleSafe": true,
+    "api": [
+      {
+        "name": "tables",
+        "path": "/tables",
+        "methods": [
+          "GET"
+        ],
+        "description": "List shared typed tables."
+      },
+      {
+        "name": "rows",
+        "path": "/tables/:id/query",
+        "methods": [
+          "POST"
+        ],
+        "description": "Read typed rows with equality, numeric filters, sorting and pagination."
+      }
+    ]
+  }
+}
