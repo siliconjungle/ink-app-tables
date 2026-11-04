@@ -31,3 +31,7 @@ The app serves `tables.mjs`, a standalone table reader you can bundle into a gam
 ## License
 
 MIT for app code. Bundled third-party components retain their own licenses and notices.
+
+## Quick preview
+
+Shows typed table records and their rows without entering the editor. Ink OS can select this reader through `desktop.preview.fileTypes`, independently of Open with. Space opens the temporary preview from a selection; Escape or Space dismisses it, and arrow keys browse the supplied item order.
